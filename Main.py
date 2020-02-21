@@ -1,7 +1,9 @@
 from tkinter import *
 
+import Excel_Import as EI
+
 root = Tk()
-root.title('PSS Excel Reformat')
+root.title('Uniform Excel Formatter')
 
 root.geometry("500x500")
 root.resizable(0, 0)
@@ -13,10 +15,11 @@ root.config(menu=menu)
 # menu.add_cascade(label, menu=^^)
 # men
 
+EI.get_CSV("est")
+
 subMenu = Menu(menu, tearoff=0)
 menu.add_cascade(label="File", menu=subMenu)
 subMenu.add_command(label="Load File's")
-subMenu.add_command(label="Format Setting")
 subMenu.add_command(label="Settings")
 subMenu.add_separator()
 subMenu.add_command(label="Exit")
@@ -37,7 +40,7 @@ editMenu.add_command(label="Label")
 
 # Status Bar
 
-status = Label(root, text="Label", bd=2, relief=SUNKEN, anchor=W)
+status = Label(root, text="Made By Marvin Beekmann. Rev. 9/24/19", bd=2, relief=SUNKEN, anchor=W)
 status.pack(side=BOTTOM, fill=X)
 
 # graphics
